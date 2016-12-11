@@ -1,0 +1,2 @@
+var test=1;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uanMiXSwibmFtZXMiOlsidGVzdCJdLCJtYXBwaW5ncyI6IkFBQUEsR0FBQUEsTUFBQSIsImZpbGUiOiJhcHAuanMiLCJzb3VyY2VzQ29udGVudCI6WyJ2YXIgdGVzdCA9IDE7Il19
