@@ -1,15 +1,72 @@
-.test {
-	color: blue;
+html {
+	background: #333;
 }
 
-.test2 {
-	color: blue;
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	color: #37383c;
+	line-height: 1.5em;
 }
 
-.test3 {
-	color: red;
+h1 {
+	margin: 0;
 }
 
-.test2 {
-	background: blue;
+h2 {
+	margin: 0;
+	font-size: 35px;
+}
+
+.kicker {
+	font-size: 80px;
+	line-height: 120px;
+	margin: 0;
+}
+
+.section {
+	height: 500px;
+}
+
+.section--one {
+	background-image: url(/img/hero3.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	min-height: 100%;
+	color: #fff;
+}
+
+.section--one .section-content {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.section--two {
+	background: #f8f8f8;
+	box-shadow: 0px 0px 30px rgba(0,0,0,0.3)
+}
+
+.section--three {
+	background-image: url(/img/image25.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	color: #fff;
+}
+
+.section--four {
+	background: #f8f8f8;
+}
+
+.section-content {
+	max-width: 960px;
+	margin: auto;
+	padding: 50px 0;
+}
+
+.section-verticalCentering {
+	display: table-cell;
+	vertical-align: middle;
+	height: 100%;
 }

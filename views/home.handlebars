@@ -1,1 +1,46 @@
-home
+<div class="section section--one">
+	<div class="section-content">
+		<div class="section-verticalCentering">
+			<p class="kicker"><strong>Julia Maric</strong></p>
+			<h1>Psykologisk Coach i Stockholm</h1>
+		</div>
+	</div> 
+</div>
+
+<div class="section section--two">
+	<div class="section-content">
+		<div class="box">
+			div2
+		</div
+	</div>
+</div>
+
+<div class="section section--three">
+	<div class="section-content">
+		div3
+	</div>
+</div>
+
+<div class="section section--four">
+	<div class="section-content">
+		<h2>Kontakt</h2>
+		<p>
+			E-post: <a href="mailto:&#106;&#117;&#108;&#105;&#97;&#46;&#109;&#97;&#114;&#105;&#99;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#106;&#117;&#108;&#105;&#97;&#46;&#109;&#97;&#114;&#105;&#99;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a><br>
+			Telefon: <a href="tel:0046709750648">0709-75 06 48</a>
+		</p>
+		<form class="contact js-contactForm" action="/sendmail" method="GET">
+			<input class="contact-field" type="text" name="name" placeholder="Namn">
+			<input class="contact-field" type="email" name="email" placeholder="E-post">
+			<textarea class="contact-textarea" name="message" placeholder="Meddelande"></textarea>
+			<button>Skicka</button>
+
+			{{#if query.email-sent}}
+				<p>Meddelandet skickat.</p>
+			{{/if}}
+			{{#if query.email-error}}
+				<p>Någonting gick fel och meddelandet kunde tyvärr inte skickas. Vänligen försök igen.</p>
+			{{/if}}
+
+		</form>
+	</div>
+</div>

@@ -1,7 +1,8 @@
 // Use "nodemon" to start server
 
 var express = require('express'),
-	handlebars = require('express-handlebars');
+	handlebars = require('express-handlebars'),
+	nodemailer = require('nodemailer');
 
 var app = express();
 
@@ -16,7 +17,34 @@ app.use(express.static(__dirname + '/public'));
 // Home route
 app.get('/', function (request, response) {
 	response.render('home', {
-		title: 'hepp'
+		title: 'Julia Maric',
+		query : request.query
+	});
+});
+
+// Send email
+app.get('/sendmail', function (request, response) {
+	var transporter = nodemailer.createTransport({
+			service: 'Gmail',
+			auth: {
+				user: '',
+				pass: ''
+			}
+		});
+
+	transporter.sendMail({
+		from: request.query.name + '<' + request.query.email + '>',
+		to: 'nfalke@gmail.com',
+		subject: 'test',
+		text: request.query.message
+	}, function (error, info) {
+		if (error) {
+			console.log(error);
+			response.redirect('/?email-error=true');
+		} else {
+			console.log('Message sent');
+			response.redirect('/?email-sent=true');
+		}
 	});
 });
 
