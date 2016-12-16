@@ -27,8 +27,8 @@ app.get('/sendmail', function (request, response) {
 	var transporter = nodemailer.createTransport({
 			service: 'Gmail',
 			auth: {
-				user: '',
-				pass: ''
+				user: process.env.emailUser,
+				pass: process.env.emailPassword
 			}
 		});
 
