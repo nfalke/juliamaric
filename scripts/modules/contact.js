@@ -11,14 +11,19 @@ juliamaric.contact = {
 
 			event.preventDefault();
 
-			$.ajax({
-				url: thisElement.attr('action'),
-				data: thisElement.serialize()
-			}).done(function (response) {
-				thisElement.html($(response).find('.js-contactForm').html());
-			}).fail(function (response) {
-				alert('Någonting gick fel och meddelandet kunde tyvärr inte skickas. Vänligen försök igen.');
-			})
+			thisElement.attr('disabled', true);
+
+			if (thisElement.find('textarea').val().length > 0 ) {
+				$.ajax({
+					url: thisElement.attr('action'),
+					data: thisElement.serialize()
+				}).done(function (response) {
+					thisElement.html($(response).find('.js-contactForm').html());
+				}).fail(function (response) {
+					alert('Någonting gick fel och meddelandet kunde tyvärr inte skickas. Vänligen försök igen.');
+					thisElement.attr('disabled', false);
+				});
+			}
 		});
 	}
 }

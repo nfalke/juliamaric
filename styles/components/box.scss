@@ -1,4 +1,8 @@
 .box {
 	padding: 50px;
-	border: 15px solid #eee;
+	border: 15px solid red;
+
+	> :last-child {
+		margin-bottom: 0;
+	}
 }

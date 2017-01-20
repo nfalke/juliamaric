@@ -1,0 +1,17 @@
+.column {
+	@media (min-width: 700px) {
+		width: 50%;
+	}
+}
+
+.column--left {
+	@media (min-width: 700px) {
+		float: left;
+	}
+}
+
+.column--right {
+	@media (min-width: 700px) {
+		float: right;
+	}
+}

@@ -35,15 +35,15 @@ app.get('/sendmail', function (request, response) {
 	transporter.sendMail({
 		from: request.query.name + '<' + request.query.email + '>',
 		to: 'nfalke@gmail.com',
-		subject: 'test',
+		subject: 'Meddelande från webbsajten',
 		text: request.query.message
 	}, function (error, info) {
 		if (error) {
 			console.log(error);
-			response.redirect('/?email-error=true');
+			response.redirect('/?email-error=true#contact');
 		} else {
 			console.log('Message sent');
-			response.redirect('/?email-sent=true');
+			response.redirect('/?email-sent=true#contact');
 		}
 	});
 });
