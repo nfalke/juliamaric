@@ -2,9 +2,10 @@ var juliamaric = juliamaric || {};
 
 juliamaric.accordion = {
 	settings: {
-		accordion: '.js-accordion',
+		event: 'click',
 		toggler: '.js-accordionToggler',
-		panel: '.js-accordionPanel'
+		panel: '.js-accordionPanel',
+		activeClass: 'is-expanded'
 	},
 
 	init: function () {
@@ -14,36 +15,38 @@ juliamaric.accordion = {
 	},
 
 	bindEvents: function (module) {
-		var accordions = document.querySelectorAll(module.settings.accordion),
+		var togglers = document.querySelectorAll(module.settings.toggler),
 			i;
 
-		for (i = 0; i < accordions.length; i += 1) {
-			accordions[i].querySelector(module.settings.toggler).addEventListener('click', function () {
-				module.accordion(module, accordions, this.parentElement);
+		for (i = 0; i < togglers.length; i += 1) {
+			togglers[i].addEventListener(module.settings.event, function (event) {
+				event.preventDefault();
+				
+				module.toggle(module, togglers, this);
 			});
 		}
 	},
 
-	accordion: function (module, accordions, accordion) {
-		var panel = accordion.querySelector(module.settings.panel),
+	toggle: function (module, togglers, toggler) {
+		var panel = toggler.parentNode.nextElementSibling,
 			i;
 
 		// Close others
-		for (i = 0; i < accordions.length; i += 1) {
-			if (accordions[i] !== accordion) {
-				accordions[i].classList.remove('active');
-				accordions[i].querySelector(module.settings.panel).style.maxHeight = null;
+		for (i = 0; i < togglers.length; i += 1) {
+			if (togglers[i] !== toggler) {
+				togglers[i].parentNode.classList.remove(module.settings.activeClass);
+				togglers[i].parentNode.nextElementSibling.style.maxHeight = null;
 			}
 		}
 
-		// Toggle this
-		accordion.classList.toggle('active');
+		// Set active class to change icon (+/-)
+		toggler.parentNode.classList.toggle(module.settings.activeClass);
 
-		// Set max height to panel
-	    if (panel.style.maxHeight) {
-	      panel.style.maxHeight = null;
-	    } else {
-	      panel.style.maxHeight = panel.scrollHeight + 'px';
-	    }
+		// Set max height to panel. This makes the pannel toggle.
+		if (panel.style.maxHeight) {
+		  panel.style.maxHeight = null;
+		} else {
+		  panel.style.maxHeight = panel.scrollHeight + 'px';
+		}
 	}
 }

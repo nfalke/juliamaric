@@ -1,0 +1,39 @@
+$gutterLarge: 1.5rem;
+
+.grid {
+	display: flex;
+	flex-flow: row wrap;
+	box-sizing: border-box;
+}
+
+.grid--equalHeight > .grid-cell {
+	display: flex;
+	box-sizing: inherit;
+}
+
+.grid--gutterV,
+.grid--gutterA {
+	margin-top: -$gutterLarge;
+	margin-bottom: -$gutterLarge;
+
+	& > .grid-cell {
+		padding-top: $gutterLarge;
+		padding-bottom: $gutterLarge;
+	}
+}
+
+.grid--gutterH,
+.grid--gutterA {
+	margin-left: -$gutterLarge;
+	margin-right: -$gutterLarge;
+
+	& > .grid-cell {
+		padding-left: $gutterLarge;
+		padding-right: $gutterLarge;
+	}
+}
+
+.grid-cell {
+	flex: 0 0 auto;
+	width: 50%;
+}

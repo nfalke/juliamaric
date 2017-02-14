@@ -1,27 +1,23 @@
 .accordion-heading {
-	cursor: pointer;
-	margin: 1em 0 0;
-	user-select: none;
+    cursor: pointer;
+    margin: 1em 0 0;
+    user-select: none;
 
-	&:after {
-	    content: "\02795"; // +
-	    font-size: 12px;
-	    margin-left: 5px;
+    &:after {
+        content: "\02795"; // +
+        font-size: 12px;
+        margin-left: 5px;
+    }
 
-	    .active & {
-	    	content: "\2796"; // -
-	    }
-	}
+    &.is-expanded:after {
+        content: "\2796"; // -
+    }
 }
 
 .accordion-panel {
-	overflow-y: hidden;
-	max-height: 0;
-	transition-property: all;
-	transition-duration: .5s;
-	transition: max-height 0.2s ease-out;
-
-	.active & {
-		max-height: 500px;
-	}
+    overflow-y: hidden;
+    max-height: 0;
+    transition-property: all;
+    transition-duration: .5s;
+    transition: max-height 0.2s ease-out;
 }
