@@ -25,7 +25,6 @@ html {
 	//background-image: url(/img/bg.jpg);
 	background-attachment: fixed;
 	background-size: 100%;
-	padding: 80px;
 }
 
 *,
@@ -39,6 +38,10 @@ body {
 	font-family: 'AftenScreen', sans-serif;
 	color: #333;
 	line-height: 1.5em;
+}
+
+img {
+	max-width: 100%;
 }
 
 a {
@@ -73,7 +76,30 @@ a {
 }
 
 .u-paddingA {
-	padding: 3rem;
+	padding: 1rem;
+
+	@media (min-width: 768px) {
+		padding: 2rem;
+	}
+
+	@media (min-width: 1024px) {
+		padding: 3rem;
+	}
+}
+
+.u-paddingV {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+
+	@media (min-width: 768px) {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+
+	@media (min-width: 1024px) {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
 }
 
 .u-center {

@@ -1,3 +1,5 @@
+$gutterSmall: 0.5rem;
+$gutterMedium: 1rem;
 $gutterLarge: 1.5rem;
 
 .grid {
@@ -13,27 +15,91 @@ $gutterLarge: 1.5rem;
 
 .grid--gutterV,
 .grid--gutterA {
-	margin-top: -$gutterLarge;
-	margin-bottom: -$gutterLarge;
+	margin-top: -$gutterSmall;
+	margin-bottom: -$gutterSmall;
+
+	@media (min-width: 768px) {
+		margin-top: -$gutterMedium;
+		margin-bottom: -$gutterMedium;
+	}
+
+	@media (min-width: 1024px) {
+		margin-top: -$gutterLarge;
+		margin-bottom: -$gutterLarge;
+	}
 
 	& > .grid-cell {
-		padding-top: $gutterLarge;
-		padding-bottom: $gutterLarge;
+		padding-top: $gutterSmall;
+		padding-bottom: $gutterSmall;
+
+		@media (min-width: 768px) {
+			padding-top: $gutterMedium;
+			padding-bottom: $gutterMedium;
+		}
+
+		@media (min-width: 1024px) {
+			padding-top: $gutterLarge;
+			padding-bottom: $gutterLarge;
+		}
 	}
 }
 
 .grid--gutterH,
 .grid--gutterA {
-	margin-left: -$gutterLarge;
-	margin-right: -$gutterLarge;
+	margin-left: -$gutterSmall;
+	margin-right: -$gutterSmall;
+
+	@media (min-width: 768px) {
+		margin-left: -$gutterMedium;
+		margin-right: -$gutterMedium;
+	}
+
+	@media (min-width: 1024px) {
+		margin-left: -$gutterLarge;
+		margin-right: -$gutterLarge;
+	}
 
 	& > .grid-cell {
-		padding-left: $gutterLarge;
-		padding-right: $gutterLarge;
+		padding-left: $gutterSmall;
+		padding-right: $gutterSmall;
+
+		@media (min-width: 768px) {
+			padding-left: $gutterMedium;
+			padding-right: $gutterMedium;
+		}
+
+		@media (min-width: 1024px) {
+			padding-left: $gutterLarge;
+			padding-right: $gutterLarge;
+		}
 	}
 }
 
 .grid-cell {
 	flex: 0 0 auto;
-	width: 50%;
+	width: 100%;
+
+	@media (min-width: 1024px) {
+		width: 50%;
+	}
+}
+
+.grid-cell--1of3 {
+	@media (min-width: 480px) {
+		width: 50%;
+	}
+
+	@media (min-width: 768px) {
+		width: 33.3333%;
+	}
+}
+
+.grid-cell--2of3 {
+	@media (min-width: 480px) {
+		width: 50%;
+	}
+
+	@media (min-width: 768px) {
+		width: 66.6666%;
+	}
 }
